@@ -43,8 +43,8 @@ st.sidebar.number_input('Ave generation (MW)', value=ave_generation, disabled=Tr
 st.sidebar.number_input('Electricity sent out (GWh)', value=electricity_sent_out, disabled=True)
 st.sidebar.number_input('AV BLR efficiency %', value=av_blr_efficiency, disabled=True)
 st.sidebar.number_input('MTBM (Hrs)', value=av_blr_efficiency, disabled=True)
-#st.sidebar.number_input('Coal usage (tonnes)', value=25068.23, disabled=False)
-#st.sidebar.number_input('Diesel usage Litres', value=6453.15, disabled=False)
+st.sidebar.number_input('Coal usage (tonnes)', value:25068.23, disabled=False)
+st.sidebar.number_input('Diesel usage Litres', value:6453.15, disabled=False)
 
 
 # Display the input parameters
