@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Set the title of the app
-st.title('Maintenance Cost Optimization with Random Forest')
+st.title('Reliability/Maintenance Cost Optimisation with Random Forest')
 
 # Define the input parameters with initial dummy data
 initial_data = {
