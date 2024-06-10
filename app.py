@@ -51,12 +51,6 @@ st.sidebar.number_input('MTBM (Hrs)', value=av_blr_efficiency, disabled=True)
 st.sidebar.write('Ave SHtr Temp (Deg Celsius)', 525.12)
 st.sidebar.write('Ave Steam Pressure (Mpa)', 15.87)
 
-# Define the input parameters with initial dummy data
-initial_data = {
-    'Coal usage (tonnes)': 25068.23,
-    'Diesel usage Litres': 6453.15,
-    'Reliability %': 33.42,
-}
 
 # Subheader for the predicted maintenance cost
 st.subheader('Predicted Maintenance Cost')
