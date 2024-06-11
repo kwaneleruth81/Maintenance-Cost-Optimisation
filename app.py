@@ -27,6 +27,47 @@ st.sidebar.header('Input Parameters')
 
 # Display the input parameters in the sidebar and get user input
 reliability = st.sidebar.slider('Reliability %', 0, 100, value=int(initial_data['Reliability %']))
+st.markdown(
+    """
+    <style>
+    div[data-baseweb="slider"] {
+        background: #f0f0f5;  /* default background */
+        border-radius: 3px;
+        padding: 0.2rem 0.5rem;
+    }
+    div[data-baseweb="slider"] > div {
+        background: transparent;
+    }
+    div[data-baseweb="slider"] .css-14el2xx {
+        background: #E0E0E0;
+    }
+    div[data-baseweb="slider"] .css-1kw3swa.e1f86d0o4 {
+        background: #C0C0C0;
+    }
+    div[data-baseweb="slider"] .css-1mga1tz.e1f86d0o3 {
+        background: #f0f0f5;
+    }
+    div[data-baseweb="slider"] .css-2d917.e1f86d0o2 {
+        background: #A0A0A0;
+    }
+    div[data-baseweb="slider"] .css-1ezy5yt.e1f86d0o1 {
+        background: #808080;
+    }
+    div[data-baseweb="slider"] [role='slider'] {
+        background: #4CAF50; /* default thumb color */
+    }
+    div[data-baseweb="slider"] [role='slider'][aria-valuenow="64"],
+    div[data-baseweb="slider"] [role='slider'][aria-valuenow="65"],
+    div[data-baseweb="slider"] [role='slider'][aria-valuenow="66"],
+    div[data-baseweb="slider"] [role='slider'][aria-valuenow="67"] {
+        background: green;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+# Display the value of the slider
+st.write('Reliability:', reliability)
 
 # Calculate other parameters based on Reliability %
 plant_availability = (reliability / 100) * 0.88 * 100  # Assuming Plant Availability % is 88% of Reliability %
