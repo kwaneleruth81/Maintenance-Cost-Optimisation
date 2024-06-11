@@ -95,8 +95,8 @@ maintenance_cost = 250000 - (reliability / 100) * (250000 - 150000)
 boiler_failures = int((10 - 1) * (1 - reliability / 100) + 1)  # Linearly scales from 10 to 1
 
 # Display the updated input parameters in the sidebar
-st.sidebar.number_input('Plant Availability %', value=plant_availability, disabled=True)
-st.sidebar.number_input('Ave generation (MW)', value=ave_generation, disabled=True)
+st.sidebar.number_input('Plant Availability %', value=plant_availability)
+st.sidebar.number_input('Ave generation (MW)', value=ave_generation, disabled=False)
 st.sidebar.number_input('Electricity sent out (GWh)', value=electricity_sent_out, disabled=True)
 st.sidebar.number_input('AV BLR efficiency %', value=av_blr_efficiency, disabled=True)
 st.sidebar.number_input('MTBM (Hrs)', value=mtbm_hours, disabled=True)
