@@ -55,12 +55,16 @@ st.markdown(
     }
     div[data-baseweb="slider"] [role='slider'] {
         background: #ff4b4b; /* default thumb color for values 0-63 and 68-100 */
+        width: 16px; /* default thumb width */
+        height: 16px; /* default thumb height */
     }
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="64"],
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="65"],
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="66"],
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="67"] {
         background: green;
+        width: 24px; /* increased thumb width */
+        height: 24px; /* increased thumb height */
     }
     </style>
     """, unsafe_allow_html=True
