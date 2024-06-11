@@ -101,7 +101,7 @@ st.sidebar.number_input('Electricity sent out (GWh)', value=electricity_sent_out
 st.sidebar.number_input('AV BLR efficiency %', value=av_blr_efficiency)
 st.sidebar.number_input('MTBM (Hrs)', value=mtbm_hours)
 st.sidebar.number_input('Coal usage (tonnes)', value=initial_data['Coal usage (tonnes)', disabled=True])
-st.sidebar.number_input('Diesel usage Litres', value=initial_data['Diesel usage Litres', , disabled=True])
+st.sidebar.number_input('Diesel usage Litres', value=initial_data['Diesel usage Litres', disabled=True])
 st.sidebar.write('Ave SHtr Temp (Deg Celsius)', 525.12)
 st.sidebar.write('Ave Steam Pressure (Mpa)', 15.87)
 
