@@ -54,7 +54,7 @@ st.markdown(
         background: #808080;
     }
     div[data-baseweb="slider"] [role='slider'] {
-        background: #4CAF50; /* default thumb color */
+        background: #ff4b4b; /* default thumb color for values 0-63 and 68-100 */
     }
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="64"],
     div[data-baseweb="slider"] [role='slider'][aria-valuenow="65"],
