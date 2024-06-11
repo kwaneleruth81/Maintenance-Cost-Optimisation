@@ -30,16 +30,18 @@ reliability = st.sidebar.slider('Reliability %', 0, 100, value=int(initial_data[
 
 # Calculate other parameters based on Reliability %
 plant_availability = (reliability / 100) * 0.88 * 100  # Assuming Plant Availability % is 88% of Reliability %
-ave_generation = (reliability / 100) * 0.75 * 200  # Assuming Ave generation (MW) is 75% of Reliability % times 200
-electricity_sent_out = (reliability / 100) * 0.80 * 50  # Assuming Electricity sent out (GWh) is 80% of Reliability % times 50
 
-# Set AV BLR efficiency % and MTBM (Hrs) based on Reliability %
+# Adjust Ave generation (MW), Electricity sent out (GWh), and MTBM (Hrs) when Reliability % is 66
 if reliability == 66:
+    ave_generation = 154.26
+    electricity_sent_out = 43.7
+    mtbm_hours = 300
     av_blr_efficiency = 62.0
-    mtbm_hours = 200
 else:
+    ave_generation = (reliability / 100) * 0.75 * 200  # Assuming Ave generation (MW) is 75% of Reliability % times 200
+    electricity_sent_out = (reliability / 100) * 0.80 * 50  # Assuming Electricity sent out (GWh) is 80% of Reliability % times 50
     av_blr_efficiency = (reliability / 100) * 0.70 * 100  # Assuming AV BLR efficiency % is 70% of Reliability %
-    mtbm_hours = (reliability / 100) * 200  # Adjusted scaling for MTBM (Hrs)
+    mtbm_hours = (reliability / 100) * 300  # Adjusted scaling for MTBM (Hrs)
 
 # Calculate maintenance cost inversely proportional to Reliability %
 maintenance_cost = 250000 - (reliability / 100) * (250000 - 150000)
@@ -58,13 +60,16 @@ st.sidebar.number_input('Diesel usage Litres', value=initial_data['Diesel usage 
 st.sidebar.write('Ave SHtr Temp (Deg Celsius)', 525.12)
 st.sidebar.write('Ave Steam Pressure (Mpa)', 15.87)
 
-# Display the slider with color change at 66%
-slider_color = '#4CAF50' if reliability == 66 else '#FFFFFF'
+# Apply custom CSS for the slider color change and Reliability % font style
 st.markdown(
     f"""
     <style>
         .stSlider > div:nth-child(3) > div > div > div {{
-            background: {slider_color};
+            background: {'#4CAF50' if reliability == 66 else '#FFFFFF'};
+        }}
+        .stSlider > div:nth-child(1) > div {{
+            color: {'red' if reliability == 66 else 'black'};
+            font-weight: {'bold' if reliability == 66 else 'normal'};
         }}
     </style>
     """,
